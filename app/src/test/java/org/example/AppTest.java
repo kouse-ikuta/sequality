@@ -8,11 +8,60 @@ import static org.junit.Assert.*;
 
 public class AppTest {
   @Test
-  public void appHasAGreeting() {
-    App classUnderTest = new App();
-    assertEquals("Hello World!", classUnderTest.getGreeting());
-    assertEquals("Sum of 2 and 3 is 5. Average is 2.5.", classUnderTest.getSumAndAverageOfAnd(2, 3));
-    assertEquals("Sum of 1 to 10 is 55. Average is 5.5.", classUnderTest.getSumAndAverageOfTo(1, 10));
-    assertEquals("Sum of odd of 1 to 10 is 25. Sum of even is 30.", classUnderTest.getSumOfOddAndEvenOfTo(1, 10));
+  public void testSum() {
+    App app = new App();
+    assertEquals(5, app.sum(2, 3));
   }
+
+  @Test
+  public void testSumRange() {
+    App app = new App();
+    assertEquals(55, app.sumRange(1, 10));
+    assertEquals(0, app.sumRange(0, 0));
+  }
+
+  @Test
+  public void testAverage() {
+    App app = new App();
+    assertEquals(2.5, app.average(5, 2), 0.01);
+  }
+
+  @Test
+  public void testSumOddRange() {
+    App app = new App();
+    assertEquals(25, app.sumOddRange(1, 10));
+    assertEquals(0, app.sumOddRange(2, 2));
+  }
+
+  @Test
+  public void testSumEvenRange() {
+    App app = new App();
+    assertEquals(30, app.sumEvenRange(1, 10));
+    assertEquals(2, app.sumEvenRange(2, 2));
+  }
+
+  @Test
+  public void testGetSumAndAverageOfAnd() {
+    App app = new App();
+    assertEquals("Sum of 2 and 3 is 5. Average is 2.5.", app.getSumAndAverageOfAnd(2, 3));
+  }
+
+  @Test
+  public void testGetSumAndAverageOfTo() {
+    App app = new App();
+    assertEquals("Sum of 1 to 10 is 55. Average is 5.5.", app.getSumAndAverageOfTo(1, 10));
+  }
+
+  @Test
+  public void testGetSumOfOddAndEvenOfTo() {
+    App app = new App();
+    assertEquals("Sum of odd of 1 to 10 is 25. Sum of even is 30.", app.getSumOfOddAndEvenOfTo(1, 10));
+  }
+
+  @Test
+  public void testGetGreeting() {
+    App app = new App();
+    assertEquals("Hello World!", app.getGreeting());
+  }
+
 }
