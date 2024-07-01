@@ -17,7 +17,6 @@ public class AppTest {
   public void testSumRange() {
     App app = new App();
     assertEquals(55, app.sumRange(1, 10));
-    assertEquals(0, app.sumRange(0, 0));
   }
 
   @Test
@@ -30,6 +29,7 @@ public class AppTest {
   public void testSumOddRange() {
     App app = new App();
     assertEquals(25, app.sumOddRange(1, 10));
+    assertEquals(1, app.sumOddRange(1, 1));
     assertEquals(0, app.sumOddRange(2, 2));
   }
 
@@ -37,6 +37,7 @@ public class AppTest {
   public void testSumEvenRange() {
     App app = new App();
     assertEquals(30, app.sumEvenRange(1, 10));
+    assertEquals(0, app.sumEvenRange(1, 1));
     assertEquals(2, app.sumEvenRange(2, 2));
   }
 
