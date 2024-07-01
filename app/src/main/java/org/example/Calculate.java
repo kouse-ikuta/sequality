@@ -37,29 +37,26 @@ public class Calculate {
     return sum;
   }
 
-  public String getSumAndAverageOf2And3() {
-    int sum = sum(2, 3);
+  public String getSumAndAverageOfAnd(int x, int y) {
+    int sum = sum(x, y);
     double average = average(sum, 2);
     return "Sum of 2 and 3 is " + sum + ". Average is " + average + ".";
   }
 
-  public String getSumAndAverageOf1To10() {
-    int sum = sumRange(1, 10);
-    double average = average(sum, 10);
+  public String getSumAndAverageOfTo(int start, int end) {
+    int sum = sumRange(start, end);
+    int counter = 0;
+    for (int i = start; i <= end; i++) {
+      counter = counter + 1;
+    }
+    double average = average(sum, counter);
     return "Sum of 1 to 10 is " + sum + ". Average is " + average + ".";
   }
 
-  public String getSumOfOddAndEvenOf1To10() {
-    int sumOdd = sumOddRange(1, 10);
-    int sumEven = sumEvenRange(1, 10);
+  public String getSumOfOddAndEvenOfTo(int start, int end) {
+    int sumOdd = sumOddRange(start, end);
+    int sumEven = sumEvenRange(start, end);
     return "Sum of odd of 1 to 10 is " + sumOdd + ". Sum of even is " + sumEven + ".";
   }
 
-  public static void main(String[] args) {
-    Calculate calc = new Calculate();
-
-    System.out.println(calc.getSumAndAverageOf2And3());
-    System.out.println(calc.getSumAndAverageOf1To10());
-    System.out.println(calc.getSumOfOddAndEvenOf1To10());
-  }
 }
